@@ -12,6 +12,7 @@ fetch("https://free-nba.p.rapidapi.com/teams?page=0", {
     loadResults(json);
   })
   .catch(function (error) {
+    const heading = document.querySelector("h1");
     heading.innerHTML = "An error occured";
     console.log(error);
   });
