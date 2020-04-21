@@ -1,8 +1,8 @@
 const updateContainer = document.querySelector("blockquote");
-const innerText = updateContainer.innerText;
+const containerText = updateContainer.innerText;
 
 function updateText() {
-  const formattedContainer = innerText
+  const formattedContainer = containerText
     .replace(/the/g, "banana")
     .replace(/The/g, "Banana");
   updateContainer.innerText = formattedContainer;
