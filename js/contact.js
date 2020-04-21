@@ -4,7 +4,7 @@ form.addEventListener("submit", validateForm);
 
 function validateForm(event) {
   event.preventDefault(); //prevents the form submit to reload page
-  console.log("The form was attempted submitted");
+  console.log("Someone tried to submit the form");
 
   //NAME
   const name = document.querySelector("#name");
@@ -13,8 +13,10 @@ function validateForm(event) {
 
   if (checkInputLength(nameValue) === true) {
     nameError.style.display = "none";
+    console.log("The name has a value.");
   } else {
     nameError.style.display = "block";
+    console.log("The name has no value.");
   }
 
   //ANSWER
@@ -24,10 +26,10 @@ function validateForm(event) {
 
   if (answerValue.length > 9) {
     answerError.style.display = "none";
-    console.log("Its more than 10");
+    console.log("The answer has more than 10 characters.");
   } else {
     answerError.style.display = "block";
-    console.log("Its less than 10");
+    console.log("The answer has less than 10 characters.");
   }
 
   //EMAIL
@@ -39,14 +41,18 @@ function validateForm(event) {
 
   if (checkInputLength(emailValue) === true) {
     emailError.style.display = "none";
+    console.log("The email has a value.");
   } else {
     emailError.style.display = "block";
+    console.log("The email has no value.");
   }
 
   if (validateEmail(emailValue) === true) {
     invalidEmailError.style.display = "none";
+    console.log("The email has a correct value.");
   } else {
     invalidEmailError.style.display = "block";
+    console.log("The email has an incorrect value.");
   }
 
   //ADDRESS
@@ -56,10 +62,10 @@ function validateForm(event) {
 
   if (addressValue.length > 14) {
     addressError.style.display = "none";
-    console.log("Its more than 15");
+    console.log("The address has 15 characters or more.");
   } else {
     addressError.style.display = "block";
-    console.log("Its less than 15");
+    console.log("The address has less than 15 characters.");
   }
 }
 //THE GENERAL FUNCTION
